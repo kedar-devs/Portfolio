@@ -5,7 +5,7 @@ var salt = bcrypt.genSaltSync(10);
 var {ObjectId} =require('mongoose')
 exports.RegisterUser=async(req,res)=>{
     try{
-        const {name,email,password}=req.body
+        const {name,email,password,about,description}=req.body
         const FoundUser=await User.findOne({email})
         if(FoundUser){
             return res.status(400).send({message:'User already exists'})
@@ -13,6 +13,8 @@ exports.RegisterUser=async(req,res)=>{
         const user={
             name:name,
             email:email,
+            about:about,
+            description:description,
             password:password,
             accessToken:'',
             resetToken:''
@@ -58,4 +60,35 @@ exports.LoginUser=async(req,res)=>{
     console.log(err)
     return res.status(500).send(err)
 }
+}
+exports.getUser=async(req,res)=>{
+try{
+    const {token}=req.params
+    const FoundUser=await User.findOne({accessToken:Token})
+    if(FoundUser){
+        return res.status(200).send(FoundUser)
+    }
+    else{
+        return res.status(400).send({message:'No User Found'})
+    }
+}catch(err){
+    console.log(err)
+    return res.status(500).send(err)
+}
+}
+exports.deleteUser=async(req,res)=>{
+    try{
+    const {token}=req.params
+    const FoundUser=await User.findOneAndDelete({accessToken:Token})
+    if(FoundUser){
+        return res.status(200).send(FoundUser)
+    }
+    else{
+        return res.status(400).send({message:'No User Found'})
+    }
+
+    }catch(err){
+        console.log(err)
+        return res.status(500).send(err)
+    }
 }
