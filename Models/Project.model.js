@@ -1,6 +1,7 @@
 const mongoose=require('mongoose')
 const Schema=mongoose.Schema
 const ProjectSchema=Schema({
+    UserId:{type:String,required:true},
     ProjectName:{type:String,required:true},
     Description:{type:String,required:true},
     StartDate:{type:Date},
