@@ -13,6 +13,6 @@ app.use(fileupload())
 app.use('/Achievment',AchievmentRoutes)
 app.use('/Experience',ExperienceRoutes)
 app.use('/Project',ProjectRoutes)
-app.use('/SkillRoutes',SkillRoutes)
-app.use('/UserRoutes',UserRoutes)
+app.use('/Skill',SkillRoutes)
+app.use('/User',UserRoutes)
 module.exports = app;
