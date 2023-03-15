@@ -12,12 +12,14 @@ exports.AddSkill=async(req,res)=>{
                 Experience
             }
             const NewUser=new Skills(skill)
-            NewUser.save((err,response)=>{
-                if(err){
-                    return res.status(400).send({message:err})
-                }
-                return res.status(200).send('New Skills Added')
+            NewUser.save()
+            .then((response) => {
+              return res.status(200).send({message:'Skill Added succesfully'});
             })
+            .catch((err) => {
+              console.log(err);
+              return res.status(400).send({ message: err });
+            });
         }else{
             return res.status(400).send({message:'No user Found'})
         }

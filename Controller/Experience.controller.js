@@ -20,14 +20,14 @@ exports.AddExperience=async(req,res)=>{
             UserId:FoundUser._id
         }
         const NewExperience=new Experience(experience)
-        NewExperience.save((err,user)=>{
-            if(err){
-                console.log(err)
-                return res.status(400).send({message:err})
-            }
-            else
-            return res.status(200).send('Experience Added Successfully')
+        NewExperience.save()
+        .then((response) => {
+          return res.status(200).send({message:'Experience Added succesfully'});
         })
+        .catch((err) => {
+          console.log(err);
+          return res.status(400).send({ message: err });
+        });
         //const experience
 
     }else{

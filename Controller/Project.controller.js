@@ -16,12 +16,14 @@ exports.AddProject=async(req,res)=>{
                 CodeUrl
             }
             const NewProject=new Project(project)
-            NewProject.save((err,response)=>{
-                if(err){
-                    return res.status(400).send(err)
-                }
-                return res.status(200).send({message:'Project Added Succesfully'})
+            NewProject.save()
+            .then((response) => {
+              return res.status(200).send({message:'Project Added succesfully'});
             })
+            .catch((err) => {
+              console.log(err);
+              return res.status(400).send({ message: err });
+            });
         }
         else{
             return res.status(400).send({message:'No user Found'})

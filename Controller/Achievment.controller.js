@@ -9,6 +9,7 @@ exports.AddAchievment=async(req,res)=>{
     const {Title,IssuedBy,Description}=req.body
     const file=req.files.file
     const link=await streamifier.UploadImage(file)
+ 
     const achievment={
         UserId:FoundUser._id,
         Title,
@@ -17,12 +18,14 @@ exports.AddAchievment=async(req,res)=>{
         Link:link.url
     }
     const NewAchievment=new Achievment(achievment)
-    NewAchievment.save((err,response)=>{
-        if(err){
-            return res.status(400).send({message:err})
-        }
-        return res.status(200).send({message:'Achievment added sucessfully'})
+    NewAchievment.save()
+    .then((response) => {
+      return res.status(200).send({message:'Achievment Added succesfully'});
     })
+    .catch((err) => {
+      console.log(err);
+      return res.status(400).send({ message: err });
+    });
 }else{
     return res.status(404).send({message:'No User Found'})
 }
