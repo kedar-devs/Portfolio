@@ -1,10 +1,10 @@
 import './App.css';
-import Navbar from './Component/Navbar/Navbar';
+import AppRoute from './Component/Routes/AppRoute';
 function App() {
   return (
     <div className="dark">
       <div className='dark:bg-black dark:h-screen'>
-      <Navbar/>
+      <AppRoute />
     </div>
     </div>
   );
