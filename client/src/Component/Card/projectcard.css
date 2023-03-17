@@ -1,0 +1,9 @@
+.imageBackground{
+    background:linear-gradient(
+        to right,
+        #00A5B0 0%,
+        #00A5B0 15%,
+        #000000 50%,
+        #000000 100%
+    )
+}

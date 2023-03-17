@@ -6,14 +6,14 @@ function Home() {
       <div  className='ml-52'>
         Hello,
       </div>
-        <div className='ml-52 mt-4'>
+        <div className='ml-52 mt-6'>
         I am <span className='text-tint ml-2'>Kedar,</span>
         </div>
-        <div className='m-52 mt-4'>
+        <div className='m-52 mt-6'>
         Full Stack Developer
         <br />
-        <button className="mt-4 border-2 border-tint text-tint text-lg">
-            <p className='m-4'>Know more about me!</p>
+        <button className="mt-6 border-2 border-tint text-tint text-lg">
+            <p className='m-6'>Know more about me!</p>
         </button>
         </div>
     </div>
