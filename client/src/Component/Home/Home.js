@@ -1,10 +1,13 @@
 import React from 'react'
+import home from './../../assets/Home.png'
 
 function Home() {
   return (
-    <div className='dark:bg-black text-6xl lg:mt-48 text-white'>
-      <div  className='ml-52'>
+    <div className=" text-6xl  text-white h-screen" style={{background:`url(${home})`}}>
+      
+      <div  className='ml-52 mt-48'>
         Hello,
+      
       </div>
         <div className='ml-52 mt-6'>
         I am <span className='text-tint ml-2'>Kedar,</span>
@@ -16,7 +19,8 @@ function Home() {
             <p className='m-6'>Know more about me!</p>
         </button>
         </div>
-    </div>
+        </div>
+
   )
 }
 

@@ -8,6 +8,9 @@ module.exports = {
     extend: {
       colors: {
         tint:'#00A5B0'
+      },
+      backgroundImage: {
+        'home':"url(/src/assets/Home.png"
       }
     },
   },
