@@ -5,6 +5,7 @@ import Navbar from '../Navbar/Navbar'
 import Project from '../Project/Project'
 import About from '../About/About'
 import Experience from '../Experience/Experience'
+import IndivisualProject from '../Project/IndivisualProject'
 
 function AppRoute() {
   return (
@@ -15,6 +16,7 @@ function AppRoute() {
             <Route path='/' element={<Home />} />
             <Route path='/About' element={<About />} />
             <Route path='/Project' element={<Project />} />
+            <Route path='/Project/:id' element={<IndivisualProject />} />
             <Route path='/Experience' element={<Experience />}/>
             </Routes>
         </Router>

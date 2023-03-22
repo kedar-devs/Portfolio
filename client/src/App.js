@@ -4,7 +4,7 @@ import home from './assets/Home.png'
 function App() {
   return (
     <div className="dark">
-      <div className='dark:bg-black dark:h-screen' >
+      <div className='dark:bg-black dark:min-h-screen' >
       <AppRoute />
     </div>
     </div>

@@ -15,11 +15,11 @@ function AboutCard() {
               <div>
                 <h1 className=' uppercase text-4xl  w-2/3 font-extrabold'>Kedar Devasthali</h1>
               </div>
-              <div className='font-bold border-l-8 border-black text-lg'>
-                <div className='mr-4'>
+              <div className=' font-semibold border-l-8 border-black text-lg'>
+                <div className='ml-4'>
                 Backend Developer<br/>
                 Associate Software Engineer @ivp<br />
-                C#,react,Sql
+                C#, react, Sql
                 </div>
               </div>
             </div>
