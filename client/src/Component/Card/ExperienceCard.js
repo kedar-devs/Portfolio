@@ -23,7 +23,7 @@ function ExperienceCard() {
             <div className='mt-2 border-2 border-tint flex w-2/3 '>
                 <span className='m-2'><span>Skills:</span> NodeJs,React,MongoDb,Express,Cloudinary,Tailwind Css</span>
             </div>
-            <div className='mt-20 h-2 borderGrad'>
+            <div className='mt-20 h-1 borderGrad'>
 
             </div>
         
