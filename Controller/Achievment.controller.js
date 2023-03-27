@@ -6,12 +6,13 @@ exports.AddAchievment=async(req,res)=>{
     const {token}=req.params
     const FoundUser=await User.findOne({accessToken:token})
     if(FoundUser){
-    const {Title,IssuedBy,Description}=req.body
+    const {Title,IssuedBy,Description,EventName}=req.body
     const file=req.files.file
     const link=await streamifier.UploadImage(file)
  
     const achievment={
         UserId:FoundUser._id,
+        EventName,
         Title,
         IssuedBy,
         Description,

@@ -5,10 +5,11 @@ exports.AddSkill=async(req,res)=>{
         const {token}=req.params
         const FoundUser=await Skill.findOne({accessToken:token})
         if(FoundUser){
-            const {Skill,Experience}=req.body
+            const {Skill,SkillLink,Experience}=req.body
             const skill={
                 UserId:FoundUser._id,
                 Skill,
+                SkillLink,
                 Experience
             }
             const NewUser=new Skills(skill)

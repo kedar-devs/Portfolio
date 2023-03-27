@@ -1,15 +1,18 @@
 const Experience=require('./../Models/Experience.model')
 const User=require('./../Models/User.model')
+const streamer=require('./../Helper/streamifier')
 exports.AddExperience=async(req,res)=>{
     try{
     const {token}=req.params
     const FoundUser=await User.findOne({accessToken:token})
+    const link=streamer.UploadImage(req.file.CompanyLogo)
     if(FoundUser){
         const {CompanyName,Location,StartDate,EndDate,CurrEmp,JobDescription,Role,JobType,IndustryType,Skills}=req.body
         const experience={
             CompanyName,
             Location,
             StartDate,
+            companyLogo:link.url,
             EndDate,
             CurrEmp,
             JobDescription,

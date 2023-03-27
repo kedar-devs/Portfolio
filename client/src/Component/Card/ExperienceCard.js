@@ -1,6 +1,10 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import './projectcard.css'
-function ExperienceCard() {
+function ExperienceCard(props) {
+    const [Experience,setExperience]=useState({})
+    useEffect(()=>{
+        setExperience(props.data)
+    },[])
   return (
     <div className='mt-5 h-2/4 text-white'>
         <ul>

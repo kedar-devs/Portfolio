@@ -3,6 +3,7 @@ const Schema=mongoose.Schema
 const ExperienceSchema=Schema({
     UserId:{type:mongoose.Schema.Types.ObjectId,required:true},
     CompanyName:{type:String,required:true},
+    companyLogo:{type:String,required:true},
     Location:{type:String,required:true},
     StartDate:{type:Date,required:true},
     EndDate:{type:Date},
