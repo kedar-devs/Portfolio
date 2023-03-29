@@ -8,7 +8,7 @@ exports.AddSkill=async(req,res)=>{
             const {Skill,SkillLink,Experience}=req.body
             const skill={
                 UserId:FoundUser._id,
-                Skill,
+                Skill:Skill.toLowerCase(),
                 SkillLink,
                 Experience
             }

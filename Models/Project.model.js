@@ -8,6 +8,8 @@ const ProjectSchema=Schema({
     EndDate:{type:Date},
     ProjectUrl:{type:String,required:true},
     CodeUrl:{type:String,required:true},
+    SkillsArray:{type:[String],required:true},
+    ImageArray:{type:[String],required:true}
 })
 const Project=mongoose.model('Project',ProjectSchema)
 module.exports=Project

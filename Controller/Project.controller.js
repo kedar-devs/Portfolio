@@ -1,11 +1,28 @@
 const Project=require('./../Models/Project.model')
 const User=require('./../Models/User.model')
+const {UploadImage}=require('./../Helper/streamifier')
+exports.fileUploader=async(file)=>{
+    let result=[]
+    let link=await UploadImage(file.img1)
+    result.push(link.url)
+     link=await UploadImage(file.img2)
+    result.push(link.url)
+     link=await UploadImage(file.img3)
+    result.push(link.url)
+     link=await UploadImage(file.img4)
+    result.push(link.url)
+    return result
+
+
+}
 exports.AddProject=async(req,res)=>{
     try{
         const {token}=req.params
         const FoundUser=await User.findOne({accessToken:token})
         if(FoundUser){
-            const {ProjectName,Description,StartDate,EndDate,ProjectUrl,CodeUrl}=req.body
+            const {ProjectName,Description,StartDate,EndDate,ProjectUrl,CodeUrl,SkillsArray}=req.body
+            console.log(typeof SkillsArray)
+            let imgArr=await this.fileUploader(req.files)
             const project={
                 UserId:FoundUser._id,
                 ProjectName,
@@ -13,7 +30,9 @@ exports.AddProject=async(req,res)=>{
                 StartDate,
                 EndDate,
                 ProjectUrl,
-                CodeUrl
+                CodeUrl,
+                SkillsArray:SkillsArray,
+                ImageArray:imgArr
             }
             const NewProject=new Project(project)
             NewProject.save()
