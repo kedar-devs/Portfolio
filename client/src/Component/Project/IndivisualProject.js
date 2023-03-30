@@ -1,7 +1,22 @@
-import React from 'react'
+import React,{useEffect,useState} from 'react'
+import {useParams} from 'react-router-dom'
+import { api } from '../Api/axiosRequest'
 
 function IndivisualProject() {
+    const {id}=useParams()
+    const [Details,setDetails]=useState({})
+    const [loading,setLoading]=useState(true)
+    useEffect(()=>{
+        api.get(`/Project/GetOneProject/${id}`)
+        .then(result=>{
+            setDetails(result.data)
+            setLoading(true)
+        })
+        
+    })
   return (
+    <>
+    {!loading?
     <div className='mt-12 m-32 '>
         <div className='grid grid-cols-2'>
             <div className='flex justify-start'>
@@ -29,7 +44,8 @@ function IndivisualProject() {
         <div className='flex justify-end text-lg text-tint'>
                 Back
         </div>
-    </div>
+    </div>:<></>}
+    </>
   )
 }
 
