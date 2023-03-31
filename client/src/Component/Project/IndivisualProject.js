@@ -1,6 +1,9 @@
 import React,{useEffect,useState} from 'react'
 import {useParams} from 'react-router-dom'
 import { api } from '../Api/axiosRequest'
+import LeftArrow from '../Scrollbar/LeftArrow'
+import RightArrow from '../Scrollbar/RightArrow'
+import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu';
 
 function IndivisualProject() {
     const {id}=useParams()
@@ -10,10 +13,13 @@ function IndivisualProject() {
         api.get(`/Project/GetOneProject/${id}`)
         .then(result=>{
             setDetails(result.data)
-            setLoading(true)
+            setLoading(false)
         })
         
     })
+    const NavigateToProject=async(link)=>{
+        window.location.href=link
+    }
   return (
     <>
     {!loading?
@@ -21,11 +27,11 @@ function IndivisualProject() {
         <div className='grid grid-cols-2'>
             <div className='flex justify-start'>
                 <h1 className=' text-3xl font-bold capitalize text-tint'>
-                    the kedar Project
+                    {Details.ProjectName}
                 </h1>
             </div>
             <div className='flex justify-end'>
-                <button className='border-2 border-spacing-0.5 border-tint'>
+                <button className='border-2 border-spacing-0.5 border-tint' onClick={()=>{NavigateToProject(Details.ProjectUrl)}}>
                     <p className='m-4 text-tint font-bold'>
                     Link to the Project
                     </p>
@@ -33,13 +39,15 @@ function IndivisualProject() {
             </div>
         </div>
         <div className='text-white text-base mt-12'>
-        Project descriptions provide the following details to the applicants: the problem the project will address, a set of goals for the project, the overall objectives for the project, as well as a project plan that de
-        <div className='flex justify-center mt-12 mb-12 overflow-x-auto'>
-        <img src='https://images.unsplash.com/photo-1572177812156-58036aae439c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80' className=' h-96 w-3/4'/>
+        {Details.Description.substring(0,300)}
+        <div className='flex justify-center mt-12 mb-12 overflow-x-auto overscroll-x-contain'>
+            {Details.ImageArray.map(ele=>{
+                return <img src={ele} className=' h-96 m-5 w-4/5' key={ele}/> 
+            })}
         {/* <img src='https://images.unsplash.com/photo-1572177812156-58036aae439c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80' className=' h-96 w-3/4 '/>
         <img src='https://images.unsplash.com/photo-1572177812156-58036aae439c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80' className=' h-96 w-3/4 '/> */}
         </div>
-        Project descriptions provide the following details to the applicants: the problem the project will address, a set of goals for the project, the overall objectives for the project, as well as a project plan that describes the activities the members will undertake. Project descriptions provide the following details to the applicants: the problem the project will address, a set of goals for the project, the overall objectives for the project, as well as a project plan that describes the activities the members will undertake. Project descriptions provide the following details to the applicants: the problem the project will address, a set of goals for the project, the overall objectives for the project, as well as a project plan that describes the activities the members will undertake. Project descriptions provide the following details to the applicants: the problem the project will address, a set of goals for the project, the overall objectives for the project, as well as a project plan that describes the activities the members will undertake.
+        {Details.Description.substring(301)}
         </div>
         <div className='flex justify-end text-lg text-tint'>
                 Back
