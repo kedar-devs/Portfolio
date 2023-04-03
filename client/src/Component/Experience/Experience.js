@@ -21,7 +21,7 @@ function Experience() {
         <div className='mt-16 grid grid-cols-1'>
             <div className=' mx-24'>
               {card.map(ele=>{
-                  <ExperienceCard data={ele} key={ele._id}/>
+                  return <ExperienceCard data={ele} key={ele._id}/>
               })}
                 
             </div>

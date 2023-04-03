@@ -1,37 +1,56 @@
 import React,{useState,useEffect} from 'react'
+import moment from 'moment'
 import './projectcard.css'
 function ExperienceCard(props) {
     const [Experience,setExperience]=useState({})
+    const [startDate,setStartDate]=useState(new Date())
+    const [endDate,setEndDate]=useState()
+    const [loading,setLoading]=useState(true)
     useEffect(()=>{
         setExperience(props.data)
+        let sDate=moment(props.data.StartDate).format('MMM-yyyy')
+        setStartDate(sDate)
+        if(props.data.CurrEmp){
+            setEndDate('Present')
+        }
+        else{
+        let dDate=moment(props.data.EndDate).format('MMM-yyyy')
+        setEndDate(dDate)
+        }
+        setLoading(false)
     },[])
   return (
+    <>
+    {!loading?
     <div className='mt-5 h-2/4 text-white'>
         <ul>
-            <li className='text-lg'>Aug 2020-Present</li>
+            <li className='text-lg'>{startDate}-{endDate}</li>
         </ul>
             <div className='grid grid-cols-8'>
                 <div className=' justify-end'>
-                    <img src='https://s3-alpha-sig.figma.com/img/5e48/d450/7de421cee9214ce7fa35fa511be17ea8?Expires=1679875200&Signature=B2DmMdhDOqungBHTurgvGhTu6vbmfO8L-8D2XjXjwU8sePu4zKZp4XctX7pi8o6TpO3laoJFPai~VEkldx-EgpSzscQpKmUaZB1xU~xqt98nI4AP5a1vJ9sY~qa7YLUkVT8u3uEEZfUrJm9I1o65QAK2oqCeI5UHW~Xe4brJRoa3nR8xrIKqWT2g8CQUM0MbdgZmKfqsuzmbYaJkvG9ZVKcXdbiBN53MXU4hLqSyo8v~h3LPbjb~Nu~OhX880cDFF4Kx91l6TINWi83WswYn7Z1tEB6HvtPikXJ6BxapK5O3rBHTBcrkqe7gVhasPyf8kBgd0PQrOAAenhaVc2Y9JQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4' className=' h-24 w-24' />
+                    <img src={Experience.CompanyLogo} className=' h-24 w-24' />
                 </div>
                 <div className='col-span-3 text-lg'>
-                    <h2>Associate Software Engineer</h2>
-                    <h2 className='text-tint text-2xl'>Indus Valley Partners</h2>
+                    <h2>{Experience.Role}</h2>
+                    <h2 className='text-tint text-2xl'>{Experience.CompanyName}</h2>
                     <hr />
-                    <p className='text-base'>Mumbai,Maharashtra</p>
+                    <p className='text-base'>{Experience.Location}</p>
                 </div>
             </div>
             <div className='mt-4 '>
-            Job descriptions provide the following details to the applicants: the problem the project will address, a set of goals for the project, the overall objectives for the project, as well as a project plan that describes the activities the members will undertake. 
+            {Experience.JobDescription}
             </div>
             <div className='mt-2 border-2 border-tint flex w-2/3 '>
-                <span className='m-2'><span>Skills:</span> NodeJs,React,MongoDb,Express,Cloudinary,Tailwind Css</span>
+                <span className='m-2'><span>Skills:</span>{Experience.Skills.map((ele)=>{
+                    return <> {ele} ,</>
+                })}</span>
             </div>
             <div className='mt-20 h-1 borderGrad'>
 
             </div>
         
-    </div>
+    </div>:<></>}
+    </>
   )
 }
 
