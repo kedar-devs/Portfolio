@@ -1,9 +1,9 @@
 import React,{useEffect,useState} from 'react'
 import {useParams} from 'react-router-dom'
 import { api } from '../Api/axiosRequest'
-import LeftArrow from '../Scrollbar/LeftArrow'
-import RightArrow from '../Scrollbar/RightArrow'
-import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 
 function IndivisualProject() {
     const {id}=useParams()
@@ -20,6 +20,13 @@ function IndivisualProject() {
     const NavigateToProject=async(link)=>{
         window.location.href=link
     }
+    var settings = {
+        dots: false,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1
+      };
   return (
     <>
     {!loading?
@@ -40,13 +47,15 @@ function IndivisualProject() {
         </div>
         <div className='text-white text-base mt-12'>
         {Details.Description.substring(0,300)}
-        <div className='flex justify-center mt-12 mb-12 overflow-x-auto overscroll-x-contain'>
+        <Slider 
+        dots={true}
+        >
             {Details.ImageArray.map(ele=>{
-                return <img src={ele} className=' h-96 m-5 w-4/5' key={ele}/> 
+                return <img src={ele} className=' h-96 m-5 w-full' key={ele}/> 
             })}
         {/* <img src='https://images.unsplash.com/photo-1572177812156-58036aae439c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80' className=' h-96 w-3/4 '/>
         <img src='https://images.unsplash.com/photo-1572177812156-58036aae439c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80' className=' h-96 w-3/4 '/> */}
-        </div>
+        </Slider>
         {Details.Description.substring(301)}
         </div>
         <div className='flex justify-end text-lg text-tint'>

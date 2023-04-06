@@ -1,6 +1,6 @@
 import React from 'react'
 import {ReactComponent as Logo} from './../../assets/logo.svg'
-import { Link } from 'react-router-dom'
+import { Link,NavLink } from 'react-router-dom'
 
 function Navbar() {
   return (
@@ -17,19 +17,19 @@ function Navbar() {
     <div className="hidden w-full md:block md:w-auto" id="navbar-default">
       <ul className="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-black dark:border-gray-700">
         <li>
-          <Link to='/' className="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-tint underline underline-offset-2 dark:hover:text-tint" aria-current="page">Home</Link>
+          <NavLink to='/'  className="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-tint underline underline-offset-2 dark:hover:text-tint" aria-current="page">Home</NavLink>
         </li>
         <li>
-          <Link to='/About' className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 dark:hover:text-tint md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400  dark:hover:bg-gray-700  md:dark:hover:bg-transparent">About</Link>
+          <NavLink exact to='/About' activeClassName='text-tint'  className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 dark:hover:text-tint md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400  dark:hover:bg-gray-700  md:dark:hover:bg-transparent">About</NavLink>
         </li>
         <li>
-          <Link to='/Project' className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 hover:text-tint md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400  dark:hover:bg-gray-700 dark:hover:text-tint md:dark:hover:bg-transparent">Projects</Link>
+          <NavLink to='/Project' className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 hover:text-tint md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400  dark:hover:bg-gray-700 dark:hover:text-tint md:dark:hover:bg-transparent">Projects</NavLink>
         </li>
         <li>
-          <Link to='/Experience' className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 hover:text-tint md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400  dark:hover:bg-gray-700 dark:hover:text-tint md:dark:hover:bg-transparent">Experience</Link>
+          <NavLink to='/Experience' className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 hover:text-tint md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400  dark:hover:bg-gray-700 dark:hover:text-tint md:dark:hover:bg-transparent">Experience</NavLink>
         </li>
         <li>
-          <Link to='/Github' className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 hover:text-tint md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400  dark:hover:bg-gray-700 dark:hover:text-tint md:dark:hover:bg-transparent">Github</Link>
+          <NavLink to='/Github' className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 hover:text-tint md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400  dark:hover:bg-gray-700 dark:hover:text-tint md:dark:hover:bg-transparent">Github</NavLink>
         </li>
       </ul>
     </div>

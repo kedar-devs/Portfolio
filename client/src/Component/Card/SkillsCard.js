@@ -1,7 +1,9 @@
 import React,{useState,useEffect} from "react";
-import { ScrollMenu, VisibilityContext,Arrow } from "react-horizontal-scrolling-menu";
+
 import "react-horizontal-scrolling-menu/dist/styles.css";
-import nodejs from "./../../assets/NodeJs.png";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 import {api} from './../Api/axiosRequest'
 
 function SkillsCard() {
@@ -17,21 +19,26 @@ function SkillsCard() {
       console.log(err)
     })
   },[])
-
+  var settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 3
+  };
 
   return (
     <div>
       {!loading?
-      <ScrollMenu
-      >
+      <Slider {...settings}>
         {skills.map((ele=>{
           return(
-            <div className="w-32 h-32 m-5">
-            <img src={ele.SkillLink} />
+            <div className="justify-center">
+            <img src={ele.SkillLink} className="w-36 h-32"/>
           </div>)
         }))}
-        
-      </ScrollMenu>:<></>}
+        </Slider>
+      :<></>}
     </div>
   );
 }
