@@ -13,11 +13,11 @@ function AppRoute() {
         <Router>
             <Navbar />
             <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/About' element={<About />} />
-            <Route path='/Project' element={<Project />} />
-            <Route path='/Project/:id' element={<IndivisualProject />} />
-            <Route path='/Experience' element={<Experience />}/>
+            <Route exact path='/' element={<Home />} />
+            <Route exact path='/About' element={<About />} />
+            <Route exact path='/Project' element={<Project />} />
+            <Route exact path='/Project/:id' element={<IndivisualProject />} />
+            <Route exact path='/Experience' element={<Experience />}/>
             </Routes>
         </Router>
     </div>

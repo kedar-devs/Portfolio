@@ -4,16 +4,24 @@ import {ReactComponent as Node} from './../../assets/NodeJs.svg'
 import {ReactComponent as Mongo} from './../../assets/Mongo.svg'
 import ProjectImg from './../../assets/Project.png'
 import './projectcard.css'
+import {api} from './../Api/axiosRequest'
 
 function ProjectCard(props) {
     console.log(props)
     const [Details,setDetails]=useState(props.data)
+    const [loading,setLoading]=useState(true)
+    const [skills,setSkills]=useState([])
     useEffect(()=>{
-        console.log(props)
+        api.get('/Skill/GetAllSkills/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWJqZWN0Ijoia2VkYXJkMjQ5LmtkQGdtYWlsLmNvbSIsImlhdCI6MTY3ODc3NTI2MX0.RIc9W1h6psOH3kQ9GMlTuVDUCh6bN1BURsg11nAHmVk')
+        .then(result=>{
+            setSkills(result.data)
+
+        })
         setDetails(props.data)
+        setLoading(false)
     },[props])
   return (
-    <div className='flex flex-col border-2 border-tint'>
+    <div className='flex flex-col border-2 border-tint' onClick={props.onClick}>
         <div className='grid grid-cols-3'>
             <div className='imageBackground flex h-80 col-span-1 '>
                 <img src={ProjectImg} className='h-60 w-60 mt-10 ml-12' />
@@ -26,8 +34,14 @@ function ProjectCard(props) {
                 {Details.Description.substring(0,250)}.......
             </div>
             <br />
-            <div className='flex mt-6'>
-                <p className='m-4'><ReactLogo /></p> <p className='m-4'><Node /></p> <p className='m-4'><Mongo /></p>
+            <div className='flex mt-6 overflow-x-auto'>
+                {!loading?
+                < >
+                {skills.map(ele=>{
+                    {console.log(ele)}
+                   return Details.SkillsArray.includes(ele.Skill)?<img src={ele.SkillLink} className=' h-16 w-20 m-4' />:<div className='text-white'></div>
+                })} 
+                    </>:<></>}
             </div>
             </div>
         </div>

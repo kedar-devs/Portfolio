@@ -3,10 +3,12 @@ import insta from "./../../assets/insta.png";
 import linkedIn from "./../../assets/linkedIn.png";
 import Twitter from "./../../assets/Twitter.png";
 import Gmail from "./../../assets/Gmail.png";
+import Slider from "react-slick";
 import "./projectcard.css";
 import { api } from "../Api/axiosRequest";
 function AboutCard() {
   const [name, setName] = useState();
+  const [skills,setSkill]=useState()
   const [details, setDetails] = useState({});
   const [descriptions, setDescription] = useState();
   const [loading, setLoading] = useState(true);
@@ -17,7 +19,6 @@ function AboutCard() {
         "/User/GetUser/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWJqZWN0Ijoia2VkYXJkMjQ5LmtkQGdtYWlsLmNvbSIsImlhdCI6MTY3ODc3NTI2MX0.RIc9W1h6psOH3kQ9GMlTuVDUCh6bN1BURsg11nAHmVk"
       )
       .then((result) => {
-        console.log(result.data);
         setName(result.data.name);
         setDescription(result.data.description);
         const detail = {

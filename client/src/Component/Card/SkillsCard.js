@@ -30,7 +30,10 @@ function SkillsCard() {
   return (
     <div>
       {!loading?
-      <Slider {...settings}>
+      <Slider
+       {...settings}
+       dotsClass= "slick-dots mb-9"
+      >
         {skills.map((ele=>{
           return(
             <div className="justify-center">

@@ -1,11 +1,12 @@
 import React,{useEffect,useState} from 'react'
-import {useParams} from 'react-router-dom'
+import {useNavigate, useParams} from 'react-router-dom'
 import { api } from '../Api/axiosRequest'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
 function IndivisualProject() {
+    const navigate=useNavigate()
     const {id}=useParams()
     const [Details,setDetails]=useState({})
     const [loading,setLoading]=useState(true)
@@ -48,7 +49,8 @@ function IndivisualProject() {
         <div className='text-white text-base mt-12'>
         {Details.Description.substring(0,300)}
         <Slider 
-        dots={true}
+        {...settings}
+        dotsClass='slick-dots text-white m-3'
         >
             {Details.ImageArray.map(ele=>{
                 return <img src={ele} className=' h-96 m-5 w-full' key={ele}/> 
@@ -58,7 +60,7 @@ function IndivisualProject() {
         </Slider>
         {Details.Description.substring(301)}
         </div>
-        <div className='flex justify-end text-lg text-tint'>
+        <div className='flex justify-end text-lg text-tint' onClick={()=>{navigate('/Project')}}>
                 Back
         </div>
     </div>:<></>}
