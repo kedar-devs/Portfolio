@@ -3,7 +3,7 @@ const Skills=require('./../Models/Skills.model')
 exports.AddSkill=async(req,res)=>{
     try{
         const {token}=req.params
-        const FoundUser=await Skill.findOne({accessToken:token})
+        const FoundUser=await User.findOne({accessToken:token})
         if(FoundUser){
             const {Skill,SkillLink,Experience}=req.body
             const skill={
