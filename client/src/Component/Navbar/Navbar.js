@@ -17,19 +17,41 @@ function Navbar() {
     <div className="hidden w-full md:block md:w-auto" id="navbar-default">
       <ul className="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-black dark:border-gray-700">
         <li>
-          <NavLink exact to='/' activeClassName='text-tint'   className="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white underline underline-offset-2 dark:hover:text-tint" aria-current="page">Home</NavLink>
+          <NavLink exact to='/'   
+           className={({isActive})=>{
+            return "block py-2 pl-3 pr-4 bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white dark:hover:text-tint "+
+             (isActive?'dark:text-tint underline':'dark:text-gray-400 no-underline')
+           }} aria-current="page">Home</NavLink>
         </li>
         <li>
-          <NavLink exact to='/About' activeClassName='text-tint'  className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 dark:hover:text-tint md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400  dark:hover:bg-gray-700  md:dark:hover:bg-transparent">About</NavLink>
+          <NavLink exact to='/About'   
+          className={({isActive})=>{
+            return 'block py-2 pl-3 pr-4 rounded hover:bg-gray-100 dark:hover:text-tint md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:hover:bg-gray-700  md:dark:hover:bg-transparent '+
+            (isActive?'dark:text-tint underline':'dark:text-gray-400 no-underline')
+          }}
+          >About</NavLink>
         </li>
         <li>
-          <NavLink exact to='/Project' activeClassName='text-tint'  className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 hover:text-tint md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400  dark:hover:bg-gray-700 dark:hover:text-tint md:dark:hover:bg-transparent">Projects</NavLink>
+          <NavLink exact to='/Project'   
+          className={({isActive})=>{
+            return 'block py-2 pl-3 pr-4  rounded hover:bg-gray-100 hover:text-tint md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0   dark:hover:bg-gray-700 dark:hover:text-tint md:dark:hover:bg-transparent '+
+            (isActive?'dark:text-tint underline':'dark:text-gray-400 no-underline')
+          }}>Projects</NavLink>
         </li>
         <li>
-          <NavLink exact to='/Experience' activeClassName='text-tint'  className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 hover:text-tint md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400  dark:hover:bg-gray-700 dark:hover:text-tint md:dark:hover:bg-transparent">Experience</NavLink>
+          <NavLink exact to='/Experience'   
+          className={({isActive})=>{
+            return 'block py-2 pl-3 pr-4  rounded hover:bg-gray-100 hover:text-tint md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0   dark:hover:bg-gray-700 dark:hover:text-tint md:dark:hover:bg-transparent '+
+            (isActive?'dark:text-tint underline':'dark:text-gray-400 no-underline')
+          }}>Experience</NavLink>
         </li>
         <li>
-          <NavLink exact to='/Github' activeClassName='text-tint'  className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 hover:text-tint md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400  dark:hover:bg-gray-700 dark:hover:text-tint md:dark:hover:bg-transparent">Github</NavLink>
+          <NavLink exact to='/Github'   
+          className={({isActive})=>{
+            return 'block py-2 pl-3 pr-4  rounded hover:bg-gray-100 hover:text-tint md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:hover:bg-gray-700 dark:hover:text-tint md:dark:hover:bg-transparent '+
+            (isActive?'dark:text-tint underline':'dark:text-gray-400 no-underline')
+            
+            }}>Github</NavLink>
         </li>
       </ul>
     </div>
@@ -40,3 +62,5 @@ function Navbar() {
 }
 
 export default Navbar
+
+//className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 dark:hover:text-tint md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400  dark:hover:bg-gray-700  md:dark:hover:bg-transparent"

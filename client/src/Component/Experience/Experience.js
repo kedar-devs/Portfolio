@@ -13,7 +13,7 @@ function Experience() {
   },[])
   return (
     <div>
-        <h1 className='mt-10 ml-24 text-white text-3xl'>
+        <h1 className='mt-10 ml-24 text-white text-3xl '>
             My Journey
         </h1>
         <>

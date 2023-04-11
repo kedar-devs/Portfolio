@@ -17,7 +17,7 @@ function Home() {
     })
   },[])
   return (
-    <div className=" text-6xl  text-white h-screen" style={{background:`url(${home})`}}>
+    <div className=" text-6xl  text-white" style={{background:`url(${home})`}}>
       
       <div  className='ml-52 mt-48'>
         Hello,
