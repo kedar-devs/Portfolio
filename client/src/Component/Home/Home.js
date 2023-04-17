@@ -1,8 +1,10 @@
 import React,{useEffect,useState} from 'react'
 import home from './../../assets/Home.png'
+import homeSmall from './../../assets/HomeSmall.png'
 import {api} from './../Api/axiosRequest'
-
+import { useNavigate } from 'react-router-dom'
 function Home() {
+  const navigate=useNavigate()
   const [user,setUser]=useState('Kedar Devasthali')
   const [about,setAbout]=useState('Full Stack Developer')
   useEffect(()=>{
@@ -17,22 +19,23 @@ function Home() {
     })
   },[])
   return (
-    <div className=" text-6xl  text-white" style={{background:`url(${home})`}}>
+    <div className=" lg:text-6xl text-white text-4xl" style={{background:`url(${home})`}}>
       
-      <div  className='ml-52 mt-48'>
+      <div  className='lg:ml-52 lg:mt-48 ml-32 mt-28'>
         Hello,
       
       </div>
-        <div className='ml-52 mt-6'>
+        <div className='lg:ml-52 lg:mt-6 ml-20 mt-2'>
         I am <span className='text-tint ml-2'>{user}</span>
         </div>
-        <div className='m-52 mt-6 capitalize'>
+        <div className='lg:m-52 lg:mt-6 ml-4 mt-2 capitalize'>
         {about}
         <br />
-        <button className="mt-6 border-2 border-tint text-tint text-lg">
-            <p className='m-6'>Know more about me!</p>
+        <button className="mt-6 border-2 lg:ml-0 ml-12 border-tint text-tint text-lg" onClick={()=>{navigate('/about')}}>
+            <p className='lg:m-6 m-3'>Know more about me!</p>
         </button>
         </div>
+        <img src={homeSmall} className='lg:hidden md:hidden mt-24' />
         </div>
 
   )

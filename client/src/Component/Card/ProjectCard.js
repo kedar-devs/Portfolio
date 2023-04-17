@@ -21,7 +21,7 @@ function ProjectCard(props) {
         setLoading(false)
     },[props])
   return (
-    <div className='flex flex-col border-2 border-tint' onClick={props.onClick}>
+    <div className='flex flex-col border-2 border-tint m-5' onClick={props.onClick}>
         <div className='grid grid-cols-3'>
             <div className='imageBackground flex h-80 col-span-1 '>
                 <img src={ProjectImg} className='h-60 w-60 mt-10 ml-12' />

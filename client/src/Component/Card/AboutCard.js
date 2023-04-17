@@ -36,23 +36,23 @@ function AboutCard() {
     <>
       {!loading ? (
         <div className=" text-white">
-          <div className="grid grid-cols-4 bgAbout ">
-            <div className="ml-24">
+          <div className="lg:grid lg:grid-cols-4 lg:bgAbout bgAboutSmall ">
+            <div className="lg:ml-24 ml-24">
               <img
                 src="https://images.unsplash.com/photo-1679217121503-264c00693d18?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
                 alt="my profile"
-                className=" h-64"
+                className=" lg:h-64 h-44"
               />
             </div>
-            <div className=" col-span-3 text-black mt-10">
-              <div className="grid grid-cols-3 p-4">
+            <div className=" lg:col-span-3 text-black lg:mt-16">
+              <div className="lg:grid lg:grid-cols-3 p-4">
                 <div>
-                  <h1 className=" uppercase text-4xl  w-2/3 font-extrabold">
+                  <h1 className=" uppercase lg:text-4xl lg:ml-0 text-lg ml-10  w-2/3 font-extrabold">
                     {name}
                   </h1>
                 </div>
-                <div className=" font-semibold border-l-8 border-black text-lg">
-                  <div className="ml-4">
+                <div className=" lg:font-semibold lg:border-l-8 lg:border-t-0 lg:border-black border-t-2 border-black lg:text-lg text-base font-bold">
+                  <div className="lg:ml-4">
                     {details.Role}
                     <br />
                     {details.CompanyRole} @{details.Company}
@@ -63,10 +63,10 @@ function AboutCard() {
               </div>
             </div>
           </div>
-          <div className="grid grid-cols-4 ">
+          <div className="lg:grid lg:grid-cols-4 ">
             <div>
             </div>
-            <div className=" text-white col-span-3 w-4/5">
+            <div className=" text-white lg:col-span-3 lg:w-4/5">
             <div >
               {descriptions}
             </div>

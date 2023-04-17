@@ -22,7 +22,7 @@ function ExperienceCard(props) {
   return (
     <>
     {!loading?
-    <div className='mt-5 h-2/4 text-white bg-black'>
+    <div className='mt-5 h-2/4 text-white'>
         <ul>
             <li className='text-lg'>{startDate}-{endDate}</li>
         </ul>

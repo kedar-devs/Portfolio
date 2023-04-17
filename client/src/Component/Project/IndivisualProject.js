@@ -31,7 +31,7 @@ function IndivisualProject() {
   return (
     <>
     {!loading?
-    <div className='mt-12 m-32 '>
+    <div className='mt-12 m-32'>
         <div className='grid grid-cols-2'>
             <div className='flex justify-start'>
                 <h1 className=' text-3xl font-bold capitalize text-tint'>

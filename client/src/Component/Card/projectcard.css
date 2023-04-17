@@ -32,6 +32,17 @@ li{
         #000000 100%
     )
 }
+.bgAboutSmall{
+    background:linear-gradient(
+        to bottom,
+        #000000 0%,
+        #000000 15%,
+        #00A5B0 15%,
+        #00A5B0 95%,
+        #000000 95%,
+        #000000 100%
+    )
+}
 .bgAbout1{
     background:linear-gradient(
         to bottom,

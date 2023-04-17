@@ -13,13 +13,13 @@ function Experience() {
   },[])
   return (
     <div>
-        <h1 className='mt-10 ml-24 text-white text-3xl '>
+        <h1 className='mt-10 ml-24 text-white text-3xl'>
             My Journey
         </h1>
         <>
         {!loading?
-        <div className='mt-16 grid grid-cols-1'>
-            <div className=' mx-24'>
+        <div className='mt-16 grid grid-cols-1 dark:min-h-screen'>
+            <div className='mx-24'>
               {card.map(ele=>{
                   return <ExperienceCard data={ele} key={ele._id}/>
               })}
