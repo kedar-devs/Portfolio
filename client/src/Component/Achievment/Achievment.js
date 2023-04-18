@@ -13,11 +13,11 @@ function Achievment() {
     })
   },[])
   return (
-    <div className=' h-72 grid grid-cols-3'>
-        <div className=' border-r-4 border-tint'>
-                <h1 className='text-3xl text-end mr-10 text-tint capitalize'><span className='text-5xl font-extrabold'>A</span>chievements</h1>
+    <div className=' lg:h-72 h-80 grid lg:grid-cols-3 grid-cols-1'>
+        <div className=' lg:border-r-4 border-tint'>
+                <h1 className='lg:text-3xl text-5xl lg:text-end text-center mr-10 text-tint capitalize'><span className='text-5xl font-extrabold'>A</span>chievements</h1>
         </div>
-    <div className='col-span-2 m-5 overflow-y-hidden'>
+    <div className='col-span-2 lg:m-5 m-2 overflow-y-hidden'>
       {card.map(ele=>{
         return <AchievmentCard data={ele} key={ele._id}/>
       })}

@@ -5,13 +5,13 @@ import Skill from '../Skills/Skill'
 function About() {
   return (
     <div>
-      <div className='m-4 mt-10 min-h-full'>
+      <div className='lg:m-4 mt-10 min-h-full m-2 w-4/5 lg:w-full'>
         <AboutCard />
       </div>
-      <div className='mt-20 m-4'>
+      <div className='lg:m-4 lg:mt-20 mt-10'>
         <Skill />
       </div>
-        <div className='mt-20 m-4'>
+        <div className='lg:mt-20 lg:m-4 mt-10'>
         <Achievment />
         </div>
     </div>

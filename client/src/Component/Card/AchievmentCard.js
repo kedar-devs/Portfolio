@@ -7,12 +7,12 @@ function AchievmentCard(props) {
     setAchievment(props.data)
   },[props])
   return (
-    <div className='m-3 border-2 border-tint justify-center text-white '>
-        <div className='m-5'>
+    <div className='lg:m-3 border-2 border-tint justify-center text-white sm:h-4/6'>
+        <div className='lg:m-5 m-2'>
             <div className='flex mt-6'>
              <h1 className='text-1xl mr-4 text-tint'>{Achievment.EventName}</h1>|<h2 className='text-1xl ml-2 '>{Achievment.Title}</h2>
              </div>
-            <div className=' text-md mt-4 w-4/5'>
+            <div className=' text-md mt-4 lg:w-4/5'>
             {Achievment.Description}<br />
             Issued By:{Achievment.IssuedBy}
             </div>
