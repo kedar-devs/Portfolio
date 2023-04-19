@@ -15,4 +15,21 @@ app.use('/Experience',ExperienceRoutes)
 app.use('/Project',ProjectRoutes)
 app.use('/Skill',SkillRoutes)
 app.use('/User',UserRoutes)
+
+
+app.use(express.static(path.join(__dirname,"./client/build")))
+app.get("*",function(_,res){
+    res.sendFile(
+        path.join(__dirname,"./client/build/index.html"),
+        function(err){
+            res.status(500).send(err)
+        }
+    )
+})
+
+app.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+})
 module.exports = app;
