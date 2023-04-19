@@ -20,8 +20,8 @@ function Project() {
   return (
     <>
     {!Loading?
-    <div className="mt-32">
-      <div className="grid grid-cols-1 ml-20 mr-20">
+    <div className="lg:mt-32">
+      <div className="grid grid-cols-1 lg:ml-20 lg:mr-20">
       {Project.map(ele=>{
           return(<ProjectCard data={ele} key={ele._id} onClick={()=>{navigate(`/Project/${ele._id}`)}}/>)
       })

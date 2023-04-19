@@ -19,9 +19,11 @@ function AboutCard() {
         "/User/GetUser/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWJqZWN0Ijoia2VkYXJkMjQ5LmtkQGdtYWlsLmNvbSIsImlhdCI6MTY3ODc3NTI2MX0.RIc9W1h6psOH3kQ9GMlTuVDUCh6bN1BURsg11nAHmVk"
       )
       .then((result) => {
+        
         setName(result.data.name);
         setDescription(result.data.description);
         const detail = {
+          Pp:result.data.profilepic,
           Role: result.data.about,
           CompanyRole: result.data.CurrentRole,
           Company: result.data.CurrentComp,
@@ -39,7 +41,7 @@ function AboutCard() {
           <div className="lg:grid lg:grid-cols-4 lg:bgAbout bgAboutSmall ">
             <div className="lg:ml-24 ml-24">
               <img
-                src="https://images.unsplash.com/photo-1679217121503-264c00693d18?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+                src={details.Pp}
                 alt="my profile"
                 className=" lg:h-64 h-44"
               />
@@ -71,10 +73,18 @@ function AboutCard() {
               {descriptions}
             </div>
             <div className="flex">
+              <a href="https://twitter.com/DevsKedar" target="_blank">
               <img src={Twitter} className="m-2" />
+              </a>
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=kedard249.kd@gmail.com" target="_blank">
               <img src={Gmail} className="m-2" />
+              </a>
+              <a href="https://www.linkedin.com/in/kedar-devasthali-0b8b081b5/" target="_blank">
               <img src={linkedIn} className="m-2" />
+              </a>
+              <a href="https://instagram.com/kedar_devs?igshid=ZDdkNTZiNTM=" target="_blank">
               <img src={insta} className="m-2" />
+              </a>
             </div>
           </div>
           </div>

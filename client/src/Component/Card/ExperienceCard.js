@@ -21,12 +21,14 @@ function ExperienceCard(props) {
     },[])
   return (
     <>
+    <div className='mt-5'>
     {!loading?
-    <div className='mt-5 h-2/4 text-white'>
+    <div className=' h-2/4 text-white'>
+        
         <ul>
             <li className='text-lg'>{startDate}-{endDate}</li>
         </ul>
-            <div className='grid grid-cols-8'>
+            <div className='grid lg:grid-cols-8'>
                 <div className=' justify-end'>
                     <img src={Experience.CompanyLogo} className=' h-24 w-24' />
                 </div>
@@ -40,7 +42,7 @@ function ExperienceCard(props) {
             <div className='mt-4 '>
             {Experience.JobDescription}
             </div>
-            <div className='mt-2 border-2 border-tint flex w-2/3 '>
+            <div className='mt-2 border-2 border-tint flex lg:w-2/3 w-5/6'>
                 <span className='m-2'><span>Skills:</span>{Experience.Skills.map((ele)=>{
                     return <> {ele} ,</>
                 })}</span>
@@ -48,8 +50,10 @@ function ExperienceCard(props) {
             <div className='mt-20 h-1 borderGrad'>
 
             </div>
+            
         
     </div>:<></>}
+    </div>
     </>
   )
 }

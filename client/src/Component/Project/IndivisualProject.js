@@ -31,7 +31,8 @@ function IndivisualProject() {
   return (
     <>
     {!loading?
-    <div className='mt-12 lg:m-32 '>
+    <div className='mt-12  lg:px-32 lg:pb-8'>
+        <div className='p-3 lg:p-0'>
         <div className='grid grid-cols-2'>
             <div className='flex justify-start'>
                 <h1 className=' text-3xl font-bold capitalize text-tint'>
@@ -40,7 +41,7 @@ function IndivisualProject() {
             </div>
             <div className='flex justify-end'>
                 <button className='border-2 border-spacing-0.5 border-tint' onClick={()=>{NavigateToProject(Details.ProjectUrl)}}>
-                    <p className='m-4 text-tint font-bold'>
+                    <p className='lg:m-4 m-2 text-tint font-bold'>
                     Link to the Project
                     </p>
                 </button>
@@ -53,7 +54,7 @@ function IndivisualProject() {
         dotsClass='slick-dots text-white m-3'
         >
             {Details.ImageArray.map(ele=>{
-                return <img src={ele} className=' h-96 m-5 w-full' key={ele}/> 
+                return <img src={ele} className=' lg:h-96 h-80 lg:m-5 w-full' key={ele}/> 
             })}
         {/* <img src='https://images.unsplash.com/photo-1572177812156-58036aae439c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80' className=' h-96 w-3/4 '/>
         <img src='https://images.unsplash.com/photo-1572177812156-58036aae439c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80' className=' h-96 w-3/4 '/> */}
@@ -62,6 +63,7 @@ function IndivisualProject() {
         </div>
         <div className='flex justify-end text-lg text-tint' onClick={()=>{navigate('/Project')}}>
                 Back
+        </div>
         </div>
     </div>:<></>}
     </>

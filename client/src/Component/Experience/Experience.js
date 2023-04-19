@@ -19,7 +19,7 @@ function Experience() {
         <>
         {!loading?
         <div className='mt-16 grid grid-cols-1 dark:min-h-screen'>
-            <div className='mx-24'>
+            <div className='lg:mx-24 mx-3'>
               {card.map(ele=>{
                   return <ExperienceCard data={ele} key={ele._id}/>
               })}

@@ -22,9 +22,9 @@ function ProjectCard(props) {
     },[props])
   return (
     <div className='flex flex-col border-2 border-tint m-5' onClick={props.onClick}>
-        <div className='grid grid-cols-3'>
-            <div className='imageBackground flex h-80 col-span-1 '>
-                <img src={ProjectImg} className='h-60 w-60 mt-10 ml-12' />
+        <div className='grid lg:grid-cols-3 grid-cols-1 lg:m-0 m-3'>
+            <div className='imageBackground flex h-80 lg:col-span-1 '>
+                <img src={ProjectImg} className='lg:h-60 lg:w-60  lg:mt-10 lg:ml-12' />
             </div>
             <div className='justify-center text-white col-span-2' >
                 <h1 className=' capitalize text-tint text-5xl mt-9'>

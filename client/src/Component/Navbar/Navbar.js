@@ -8,7 +8,7 @@ function Navbar() {
     
 <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-black">
   <div className="container flex flex-wrap items-center justify-around mx-auto">
-    <Link href="https://flowbite.com/" className="flex items-center">
+    <Link href="https://flowbite.com/" className="flex items-center" to='/'>
         <Logo/>
     </Link>
     <button data-collapse-toggle="navbar-default" type="button" className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false" onClick={()=>{setnavbar(!navbar)}}>
