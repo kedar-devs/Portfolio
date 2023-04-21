@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from "react";
-
+import { Dna } from "react-loader-spinner";
 import "react-horizontal-scrolling-menu/dist/styles.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -68,7 +68,18 @@ function SkillsCard() {
           </div>)
         }))}
         </Slider>
-      :<></>}
+      :<>
+      <div className="flex h-screen w-screen justify-center items-center">
+              <Dna
+                visible={true}
+                height="180"
+                width="180"
+                ariaLabel="dna-loading"
+                wrapperStyle={{}}
+                wrapperClass="dna-wrapper"
+              />
+            </div>
+      </>}
     </div>
   );
 }

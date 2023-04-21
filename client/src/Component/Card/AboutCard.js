@@ -4,6 +4,7 @@ import linkedIn from "./../../assets/linkedIn.png";
 import Twitter from "./../../assets/Twitter.png";
 import Gmail from "./../../assets/Gmail.png";
 import Slider from "react-slick";
+import { Dna } from "react-loader-spinner";
 import "./projectcard.css";
 import { api } from "../Api/axiosRequest";
 function AboutCard() {
@@ -90,7 +91,18 @@ function AboutCard() {
           </div>
         </div>
       ) : (
-        <></>
+        <>
+        <div className="flex h-screen w-screen justify-center items-center">
+              <Dna
+                visible={true}
+                height="180"
+                width="180"
+                ariaLabel="dna-loading"
+                wrapperStyle={{}}
+                wrapperClass="dna-wrapper"
+              />
+            </div>
+        </>
       )}
     </>
   );

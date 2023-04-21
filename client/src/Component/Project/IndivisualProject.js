@@ -1,6 +1,7 @@
 import React,{useEffect,useState} from 'react'
 import {useNavigate, useParams} from 'react-router-dom'
 import { api } from '../Api/axiosRequest'
+import { Dna } from "react-loader-spinner";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -65,7 +66,18 @@ function IndivisualProject() {
                 Back
         </div>
         </div>
-    </div>:<></>}
+    </div>:<>
+    <div className="flex h-screen w-screen justify-center items-center">
+              <Dna
+                visible={true}
+                height="180"
+                width="180"
+                ariaLabel="dna-loading"
+                wrapperStyle={{}}
+                wrapperClass="dna-wrapper"
+              />
+            </div>
+    </>}
     </>
   )
 }

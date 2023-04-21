@@ -1,5 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import moment from 'moment'
+import { Dna } from "react-loader-spinner";
+
 import './projectcard.css'
 function ExperienceCard(props) {
     const [Experience,setExperience]=useState({})
@@ -52,7 +54,18 @@ function ExperienceCard(props) {
             </div>
             
         
-    </div>:<></>}
+    </div>:<>
+    <div className="flex h-screen w-screen justify-center items-center">
+              <Dna
+                visible={true}
+                height="180"
+                width="180"
+                ariaLabel="dna-loading"
+                wrapperStyle={{}}
+                wrapperClass="dna-wrapper"
+              />
+            </div>
+    </>}
     </div>
     </>
   )
