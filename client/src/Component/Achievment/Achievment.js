@@ -22,7 +22,7 @@ function Achievment() {
         <div className=' lg:border-r-4 border-tint'>
                 <h1 className='lg:text-3xl text-5xl lg:text-end text-center mr-10 text-tint capitalize'><span className='text-5xl font-extrabold'>A</span>chievements</h1>
         </div>
-    <div className='col-span-2 lg:m-5 m-2 overflow-y-hidden'>
+    <div className='col-span-2 lg:m-5 m-2 overflow-y-auto no-scrollbar'>
       {card.map(ele=>{
         return <AchievmentCard data={ele} key={ele._id}/>
       })}
