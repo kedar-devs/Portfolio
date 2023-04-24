@@ -71,7 +71,9 @@ function AboutCard() {
             </div>
             <div className=" text-white lg:col-span-3 lg:w-4/5">
             <div >
+            <pre style={{ whiteSpace: 'pre-wrap',fontFamily:'sans-serif' }}>
               {descriptions}
+              </pre>
             </div>
             <div className="flex">
               <a href="https://twitter.com/DevsKedar" target="_blank">

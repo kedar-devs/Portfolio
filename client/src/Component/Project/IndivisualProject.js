@@ -48,8 +48,9 @@ function IndivisualProject() {
                 </button>
             </div>
         </div>
-        <div className='text-white text-base mt-12'>
-        {Details.Description.substring(0,300)}
+        <div className='text-white text-base mt-12 font-sans '>
+            <pre style={{ whiteSpace: 'pre-wrap',fontFamily:'sans-serif' }}>
+        {Details.Description.substring(0,250)}..
         <Slider 
         {...settings}
         dotsClass='slick-dots text-white m-3'
@@ -60,7 +61,8 @@ function IndivisualProject() {
         {/* <img src='https://images.unsplash.com/photo-1572177812156-58036aae439c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80' className=' h-96 w-3/4 '/>
         <img src='https://images.unsplash.com/photo-1572177812156-58036aae439c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80' className=' h-96 w-3/4 '/> */}
         </Slider>
-        {Details.Description.substring(301)}
+        ..{Details.Description.substring(251)}
+        </pre>
         </div>
         <div className='flex justify-end text-lg text-tint' onClick={()=>{navigate('/Project')}}>
                 Back
