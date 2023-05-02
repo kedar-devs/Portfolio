@@ -21,14 +21,14 @@ function Home() {
   return (
     <div className=" lg:text-6xl text-white text-4xl" style={{background:`url(${home})`}}>
       
-      <div  className='lg:ml-52 lg:mt-48 ml-32 mt-28'>
+      <div  className='lg:ml-52 lg:mt-48 ml-40 mt-28'>
         Hello,
       
       </div>
-        <div className='lg:ml-52 lg:mt-6 ml-20 mt-2'>
+        <div className='lg:ml-52 lg:mt-6 ml-32 mt-2'>
         I am <span className='text-tint ml-2'>{user}</span>
         </div>
-        <div className='lg:m-52 lg:mt-6 ml-4 mt-2 capitalize'>
+        <div className='lg:m-52 lg:mt-6 ml-8 mt-2 capitalize'>
         {about}
         <br />
         <button className="mt-6 border-2 lg:ml-0 ml-12 border-tint text-tint text-lg" onClick={()=>{navigate('/about')}}>
